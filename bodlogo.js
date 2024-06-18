@@ -125,9 +125,100 @@ console.log(isPrime(15)); // false гэж хэвлэнэ (15 нь анхны т�
 
 // function reverseString(str) {}
 // split() ашиглаж тэмдэгт мөрийг массив болгож байна, reverse() ашиглаж массивыг эсвэл элментүүдийг өөр байрыгаар байрлуулж байна
-let string = "hello";
-let rev;
-for (let i = string.length; i < 0; i--) {
-  rev += string[i];
+let string12 = "hello";
+let rev = "";
+// console.log(string12.length);
+for (let i = string12.length - 1; i > -1; i--) {
+  console.log("i-", i);
+  rev += string12[i];
 }
+
 console.log("reverse:", rev);
+
+//  bodlogo 9
+let students = [
+  {
+    name: "Сэд-Эрдэнэ",
+
+    age: 19,
+
+    gender: "male",
+
+    points: 70,
+  },
+
+  {
+    name: "Индра",
+
+    age: 19,
+
+    gender: "female",
+
+    points: 50,
+  },
+
+  {
+    name: "Хатнаа ",
+
+    age: 21,
+
+    gender: "male",
+
+    points: 99,
+  },
+
+  {
+    name: "Тэмүүлэн",
+
+    age: 23,
+
+    gender: "male",
+
+    points: 55,
+  },
+
+  {
+    name: "Намуун",
+
+    age: 23,
+
+    gender: "female",
+
+    points: 85,
+  },
+];
+// Эхний объектыг хэвлэж гаргах
+// Ангид хэдэн эрэгтэй , эмэгтэй сурагч байгааг олох object буцаадаг функц бичих
+// Сурагчдын насны дунджийг олох функц бичих
+// Нас нь 21-ээс дээш буюу тэнцүү сурагчдыг ол
+// 60-аас дээш оноо авсан cурагчдийг тоол
+
+console.log(students[0]);
+let gender = "male";
+for (let i = 0; i < students.length; i++) {
+  if (students[i].gender === gender) {
+    console.log("eregtei suragch :", students[i]);
+  } else {
+    console.log("emegtei suragch :", students[i]);
+  }
+}
+let age_sum = 0;
+let age_ave = 0;
+for (let i = 0; i < students.length; i++) {
+  age_sum = age_sum + students[i].age;
+}
+age_ave = age_sum / students.length;
+console.log("averge :", age_ave);
+
+let age = 21;
+for (let i = 0; i < students.length; i++) {
+  if (students[i].age >= age) {
+    console.log("21is deesh nastai suragch:", students[i]);
+  }
+}
+let piont = 60;
+for (let i = 0; i < students.length; i++) {
+  if (students[i].points > piont) {
+    console.log("60s deesh onootoi suragch:", students[i]);
+  }
+}
